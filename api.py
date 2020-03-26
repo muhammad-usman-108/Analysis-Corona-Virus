@@ -17,12 +17,10 @@ country_info = {}
 sum = 0
 
 for country in sorted(data.keys()):
-	for index in range(0,len(data[country])):
-		sum = sum + data[country][index]["confirmed"]
-	#print country , ' = ' , sum , '\n'
-	country_info[country] = sum
-	sum=0
+	country_info[country] = data[country][len(data[country])-1]["confirmed"]
 
+
+ 
 #print(country_info)
 
 
@@ -41,7 +39,7 @@ for index in range(0,len(data["data"])):
 
 
 try:
-   connection = psycopg2.connect(database="postgres", user="postgres", password="password", host="127.0.0.1", port="5432")
+   connection = psycopg2.connect(database="mytestdb", user="postgres", password="trustno1", host="127.0.0.1", port="5432")
    cursor = connection.cursor()
 
    postgres_insert_query = """ INSERT INTO country (ID, NAME, TOTAL_CASES, LATITUDE, LONGITUDE) VALUES (%s,%s,%s,%s,%s)"""
@@ -56,11 +54,11 @@ try:
 
    connection.commit()
    count = cursor.rowcount
-   print (count, "Record inserted successfully into mobile table")
+   print (count, "Record inserted successfully into country table")
 
 except (Exception, psycopg2.Error) as error :
     if(connection):
-        print("Failed to insert record into mobile table", error)
+        print("Failed to insert record into country table", error)
 
 finally:
     #closing database connection.
