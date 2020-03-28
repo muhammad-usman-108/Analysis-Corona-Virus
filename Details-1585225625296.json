@@ -1,0 +1,1493 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:802",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 23,
+  "iteration": 1585225612923,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "PostgreSQL",
+      "fill": 7,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:2143",
+          "alias": "Confirmed",
+          "color": "#5794F2"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT date as time, confirmed as \"Confirmed\"\nFROM country_details\nWHERE name = '$country' ;",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "measurements",
+          "timeColumn": "\"timestamp\"",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Confirmed Cases",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1536",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1537",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "PostgreSQL",
+      "fill": 7,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "hiddenSeries": false,
+      "id": 3,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:2143",
+          "alias": "Deaths",
+          "color": "#C4162A"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT date as time, deaths as \"Deaths\"\nFROM country_details\nWHERE name = '$country' ;",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "measurements",
+          "timeColumn": "\"timestamp\"",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Death Cases",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1536",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1537",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "PostgreSQL",
+      "fill": 7,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:2143",
+          "alias": "Recovered",
+          "color": "#73BF69"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT date as time, recovered as \"Recovered\"\nFROM country_details\nWHERE name = '$country' ;",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "measurements",
+          "timeColumn": "\"timestamp\"",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Recovered Cases",
+      "tooltip": {
+        "shared": true,
+        "sort": 1,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1536",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1537",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "$$hashKey": "object:1047",
+          "selected": true,
+          "text": "Italy",
+          "value": "Italy"
+        },
+        "datasource": "PostgreSQL",
+        "definition": "SELECT name FROM country",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": "select country",
+        "multi": false,
+        "name": "country",
+        "options": [
+          {
+            "$$hashKey": "object:931",
+            "selected": false,
+            "text": "Afghanistan",
+            "value": "Afghanistan"
+          },
+          {
+            "$$hashKey": "object:932",
+            "selected": false,
+            "text": "Albania",
+            "value": "Albania"
+          },
+          {
+            "$$hashKey": "object:933",
+            "selected": false,
+            "text": "Algeria",
+            "value": "Algeria"
+          },
+          {
+            "$$hashKey": "object:934",
+            "selected": false,
+            "text": "Andorra",
+            "value": "Andorra"
+          },
+          {
+            "$$hashKey": "object:935",
+            "selected": false,
+            "text": "Angola",
+            "value": "Angola"
+          },
+          {
+            "$$hashKey": "object:936",
+            "selected": false,
+            "text": "Antigua and Barbuda",
+            "value": "Antigua and Barbuda"
+          },
+          {
+            "$$hashKey": "object:937",
+            "selected": false,
+            "text": "Argentina",
+            "value": "Argentina"
+          },
+          {
+            "$$hashKey": "object:938",
+            "selected": false,
+            "text": "Armenia",
+            "value": "Armenia"
+          },
+          {
+            "$$hashKey": "object:939",
+            "selected": false,
+            "text": "Australia",
+            "value": "Australia"
+          },
+          {
+            "$$hashKey": "object:940",
+            "selected": false,
+            "text": "Austria",
+            "value": "Austria"
+          },
+          {
+            "$$hashKey": "object:941",
+            "selected": false,
+            "text": "Azerbaijan",
+            "value": "Azerbaijan"
+          },
+          {
+            "$$hashKey": "object:942",
+            "selected": false,
+            "text": "Bahamas",
+            "value": "Bahamas"
+          },
+          {
+            "$$hashKey": "object:943",
+            "selected": false,
+            "text": "Bahrain",
+            "value": "Bahrain"
+          },
+          {
+            "$$hashKey": "object:944",
+            "selected": false,
+            "text": "Bangladesh",
+            "value": "Bangladesh"
+          },
+          {
+            "$$hashKey": "object:945",
+            "selected": false,
+            "text": "Barbados",
+            "value": "Barbados"
+          },
+          {
+            "$$hashKey": "object:946",
+            "selected": false,
+            "text": "Belarus",
+            "value": "Belarus"
+          },
+          {
+            "$$hashKey": "object:947",
+            "selected": false,
+            "text": "Belgium",
+            "value": "Belgium"
+          },
+          {
+            "$$hashKey": "object:948",
+            "selected": false,
+            "text": "Belize",
+            "value": "Belize"
+          },
+          {
+            "$$hashKey": "object:949",
+            "selected": false,
+            "text": "Benin",
+            "value": "Benin"
+          },
+          {
+            "$$hashKey": "object:950",
+            "selected": false,
+            "text": "Bhutan",
+            "value": "Bhutan"
+          },
+          {
+            "$$hashKey": "object:986",
+            "selected": false,
+            "text": "Bolivia",
+            "value": "Bolivia"
+          },
+          {
+            "$$hashKey": "object:987",
+            "selected": false,
+            "text": "Bosnia and Herzegovina",
+            "value": "Bosnia and Herzegovina"
+          },
+          {
+            "$$hashKey": "object:988",
+            "selected": false,
+            "text": "Brazil",
+            "value": "Brazil"
+          },
+          {
+            "$$hashKey": "object:989",
+            "selected": false,
+            "text": "Brunei",
+            "value": "Brunei"
+          },
+          {
+            "$$hashKey": "object:990",
+            "selected": false,
+            "text": "Bulgaria",
+            "value": "Bulgaria"
+          },
+          {
+            "$$hashKey": "object:991",
+            "selected": false,
+            "text": "Burkina Faso",
+            "value": "Burkina Faso"
+          },
+          {
+            "$$hashKey": "object:992",
+            "selected": false,
+            "text": "Cabo Verde",
+            "value": "Cabo Verde"
+          },
+          {
+            "$$hashKey": "object:993",
+            "selected": false,
+            "text": "Cambodia",
+            "value": "Cambodia"
+          },
+          {
+            "$$hashKey": "object:994",
+            "selected": false,
+            "text": "Cameroon",
+            "value": "Cameroon"
+          },
+          {
+            "$$hashKey": "object:995",
+            "selected": false,
+            "text": "Canada",
+            "value": "Canada"
+          },
+          {
+            "$$hashKey": "object:996",
+            "selected": false,
+            "text": "Central African Republic",
+            "value": "Central African Republic"
+          },
+          {
+            "$$hashKey": "object:997",
+            "selected": false,
+            "text": "Chad",
+            "value": "Chad"
+          },
+          {
+            "$$hashKey": "object:998",
+            "selected": false,
+            "text": "Chile",
+            "value": "Chile"
+          },
+          {
+            "$$hashKey": "object:999",
+            "selected": false,
+            "text": "China",
+            "value": "China"
+          },
+          {
+            "$$hashKey": "object:1000",
+            "selected": false,
+            "text": "Colombia",
+            "value": "Colombia"
+          },
+          {
+            "$$hashKey": "object:1001",
+            "selected": false,
+            "text": "Congo (Brazzaville)",
+            "value": "Congo (Brazzaville)"
+          },
+          {
+            "$$hashKey": "object:1002",
+            "selected": false,
+            "text": "Congo (Kinshasa)",
+            "value": "Congo (Kinshasa)"
+          },
+          {
+            "$$hashKey": "object:1003",
+            "selected": false,
+            "text": "Costa Rica",
+            "value": "Costa Rica"
+          },
+          {
+            "$$hashKey": "object:1004",
+            "selected": false,
+            "text": "Cote d'Ivoire",
+            "value": "Cote d'Ivoire"
+          },
+          {
+            "$$hashKey": "object:1005",
+            "selected": false,
+            "text": "Croatia",
+            "value": "Croatia"
+          },
+          {
+            "$$hashKey": "object:1006",
+            "selected": false,
+            "text": "Cuba",
+            "value": "Cuba"
+          },
+          {
+            "$$hashKey": "object:1007",
+            "selected": false,
+            "text": "Cyprus",
+            "value": "Cyprus"
+          },
+          {
+            "$$hashKey": "object:1008",
+            "selected": false,
+            "text": "Czechia",
+            "value": "Czechia"
+          },
+          {
+            "$$hashKey": "object:1009",
+            "selected": false,
+            "text": "Denmark",
+            "value": "Denmark"
+          },
+          {
+            "$$hashKey": "object:1010",
+            "selected": false,
+            "text": "Diamond Princess",
+            "value": "Diamond Princess"
+          },
+          {
+            "$$hashKey": "object:1011",
+            "selected": false,
+            "text": "Djibouti",
+            "value": "Djibouti"
+          },
+          {
+            "$$hashKey": "object:1012",
+            "selected": false,
+            "text": "Dominica",
+            "value": "Dominica"
+          },
+          {
+            "$$hashKey": "object:1013",
+            "selected": false,
+            "text": "Dominican Republic",
+            "value": "Dominican Republic"
+          },
+          {
+            "$$hashKey": "object:1014",
+            "selected": false,
+            "text": "Ecuador",
+            "value": "Ecuador"
+          },
+          {
+            "$$hashKey": "object:1015",
+            "selected": false,
+            "text": "Egypt",
+            "value": "Egypt"
+          },
+          {
+            "$$hashKey": "object:1016",
+            "selected": false,
+            "text": "El Salvador",
+            "value": "El Salvador"
+          },
+          {
+            "$$hashKey": "object:1017",
+            "selected": false,
+            "text": "Equatorial Guinea",
+            "value": "Equatorial Guinea"
+          },
+          {
+            "$$hashKey": "object:1018",
+            "selected": false,
+            "text": "Eritrea",
+            "value": "Eritrea"
+          },
+          {
+            "$$hashKey": "object:1019",
+            "selected": false,
+            "text": "Estonia",
+            "value": "Estonia"
+          },
+          {
+            "$$hashKey": "object:1020",
+            "selected": false,
+            "text": "Eswatini",
+            "value": "Eswatini"
+          },
+          {
+            "$$hashKey": "object:1021",
+            "selected": false,
+            "text": "Ethiopia",
+            "value": "Ethiopia"
+          },
+          {
+            "$$hashKey": "object:1022",
+            "selected": false,
+            "text": "Fiji",
+            "value": "Fiji"
+          },
+          {
+            "$$hashKey": "object:1023",
+            "selected": false,
+            "text": "Finland",
+            "value": "Finland"
+          },
+          {
+            "$$hashKey": "object:1024",
+            "selected": false,
+            "text": "France",
+            "value": "France"
+          },
+          {
+            "$$hashKey": "object:1025",
+            "selected": false,
+            "text": "Gabon",
+            "value": "Gabon"
+          },
+          {
+            "$$hashKey": "object:1026",
+            "selected": false,
+            "text": "Gambia",
+            "value": "Gambia"
+          },
+          {
+            "$$hashKey": "object:1027",
+            "selected": false,
+            "text": "Georgia",
+            "value": "Georgia"
+          },
+          {
+            "$$hashKey": "object:1028",
+            "selected": false,
+            "text": "Germany",
+            "value": "Germany"
+          },
+          {
+            "$$hashKey": "object:1029",
+            "selected": false,
+            "text": "Ghana",
+            "value": "Ghana"
+          },
+          {
+            "$$hashKey": "object:1030",
+            "selected": false,
+            "text": "Greece",
+            "value": "Greece"
+          },
+          {
+            "$$hashKey": "object:1031",
+            "selected": false,
+            "text": "Grenada",
+            "value": "Grenada"
+          },
+          {
+            "$$hashKey": "object:1032",
+            "selected": false,
+            "text": "Guatemala",
+            "value": "Guatemala"
+          },
+          {
+            "$$hashKey": "object:1033",
+            "selected": false,
+            "text": "Guinea",
+            "value": "Guinea"
+          },
+          {
+            "$$hashKey": "object:1034",
+            "selected": false,
+            "text": "Guinea-Bissau",
+            "value": "Guinea-Bissau"
+          },
+          {
+            "$$hashKey": "object:1035",
+            "selected": false,
+            "text": "Guyana",
+            "value": "Guyana"
+          },
+          {
+            "$$hashKey": "object:1036",
+            "selected": false,
+            "text": "Haiti",
+            "value": "Haiti"
+          },
+          {
+            "$$hashKey": "object:1037",
+            "selected": false,
+            "text": "Holy See",
+            "value": "Holy See"
+          },
+          {
+            "$$hashKey": "object:1038",
+            "selected": false,
+            "text": "Honduras",
+            "value": "Honduras"
+          },
+          {
+            "$$hashKey": "object:1039",
+            "selected": false,
+            "text": "Hungary",
+            "value": "Hungary"
+          },
+          {
+            "$$hashKey": "object:1040",
+            "selected": false,
+            "text": "Iceland",
+            "value": "Iceland"
+          },
+          {
+            "$$hashKey": "object:1041",
+            "selected": false,
+            "text": "India",
+            "value": "India"
+          },
+          {
+            "$$hashKey": "object:1042",
+            "selected": false,
+            "text": "Indonesia",
+            "value": "Indonesia"
+          },
+          {
+            "$$hashKey": "object:1043",
+            "selected": false,
+            "text": "Iran",
+            "value": "Iran"
+          },
+          {
+            "$$hashKey": "object:1044",
+            "selected": false,
+            "text": "Iraq",
+            "value": "Iraq"
+          },
+          {
+            "$$hashKey": "object:1045",
+            "selected": false,
+            "text": "Ireland",
+            "value": "Ireland"
+          },
+          {
+            "$$hashKey": "object:1046",
+            "selected": false,
+            "text": "Israel",
+            "value": "Israel"
+          },
+          {
+            "$$hashKey": "object:1047",
+            "selected": true,
+            "text": "Italy",
+            "value": "Italy"
+          },
+          {
+            "$$hashKey": "object:1048",
+            "selected": false,
+            "text": "Jamaica",
+            "value": "Jamaica"
+          },
+          {
+            "$$hashKey": "object:1049",
+            "selected": false,
+            "text": "Japan",
+            "value": "Japan"
+          },
+          {
+            "$$hashKey": "object:1050",
+            "selected": false,
+            "text": "Jordan",
+            "value": "Jordan"
+          },
+          {
+            "$$hashKey": "object:1051",
+            "selected": false,
+            "text": "Kazakhstan",
+            "value": "Kazakhstan"
+          },
+          {
+            "$$hashKey": "object:1052",
+            "selected": false,
+            "text": "Kenya",
+            "value": "Kenya"
+          },
+          {
+            "$$hashKey": "object:1053",
+            "selected": false,
+            "text": "Korea, South",
+            "value": "Korea, South"
+          },
+          {
+            "$$hashKey": "object:1054",
+            "selected": false,
+            "text": "Kuwait",
+            "value": "Kuwait"
+          },
+          {
+            "$$hashKey": "object:1055",
+            "selected": false,
+            "text": "Kyrgyzstan",
+            "value": "Kyrgyzstan"
+          },
+          {
+            "$$hashKey": "object:1056",
+            "selected": false,
+            "text": "Laos",
+            "value": "Laos"
+          },
+          {
+            "$$hashKey": "object:1057",
+            "selected": false,
+            "text": "Latvia",
+            "value": "Latvia"
+          },
+          {
+            "$$hashKey": "object:1058",
+            "selected": false,
+            "text": "Lebanon",
+            "value": "Lebanon"
+          },
+          {
+            "$$hashKey": "object:1059",
+            "selected": false,
+            "text": "Liberia",
+            "value": "Liberia"
+          },
+          {
+            "$$hashKey": "object:1060",
+            "selected": false,
+            "text": "Libya",
+            "value": "Libya"
+          },
+          {
+            "$$hashKey": "object:1061",
+            "selected": false,
+            "text": "Liechtenstein",
+            "value": "Liechtenstein"
+          },
+          {
+            "$$hashKey": "object:1062",
+            "selected": false,
+            "text": "Lithuania",
+            "value": "Lithuania"
+          },
+          {
+            "$$hashKey": "object:1063",
+            "selected": false,
+            "text": "Luxembourg",
+            "value": "Luxembourg"
+          },
+          {
+            "$$hashKey": "object:1064",
+            "selected": false,
+            "text": "Madagascar",
+            "value": "Madagascar"
+          },
+          {
+            "$$hashKey": "object:1065",
+            "selected": false,
+            "text": "Malaysia",
+            "value": "Malaysia"
+          },
+          {
+            "$$hashKey": "object:1066",
+            "selected": false,
+            "text": "Maldives",
+            "value": "Maldives"
+          },
+          {
+            "$$hashKey": "object:1067",
+            "selected": false,
+            "text": "Mali",
+            "value": "Mali"
+          },
+          {
+            "$$hashKey": "object:1068",
+            "selected": false,
+            "text": "Malta",
+            "value": "Malta"
+          },
+          {
+            "$$hashKey": "object:1069",
+            "selected": false,
+            "text": "Mauritania",
+            "value": "Mauritania"
+          },
+          {
+            "$$hashKey": "object:1070",
+            "selected": false,
+            "text": "Mauritius",
+            "value": "Mauritius"
+          },
+          {
+            "$$hashKey": "object:1071",
+            "selected": false,
+            "text": "Mexico",
+            "value": "Mexico"
+          },
+          {
+            "$$hashKey": "object:1072",
+            "selected": false,
+            "text": "Moldova",
+            "value": "Moldova"
+          },
+          {
+            "$$hashKey": "object:1073",
+            "selected": false,
+            "text": "Monaco",
+            "value": "Monaco"
+          },
+          {
+            "$$hashKey": "object:1074",
+            "selected": false,
+            "text": "Mongolia",
+            "value": "Mongolia"
+          },
+          {
+            "$$hashKey": "object:1075",
+            "selected": false,
+            "text": "Montenegro",
+            "value": "Montenegro"
+          },
+          {
+            "$$hashKey": "object:1076",
+            "selected": false,
+            "text": "Morocco",
+            "value": "Morocco"
+          },
+          {
+            "$$hashKey": "object:1077",
+            "selected": false,
+            "text": "Mozambique",
+            "value": "Mozambique"
+          },
+          {
+            "$$hashKey": "object:1078",
+            "selected": false,
+            "text": "Namibia",
+            "value": "Namibia"
+          },
+          {
+            "$$hashKey": "object:1079",
+            "selected": false,
+            "text": "Nepal",
+            "value": "Nepal"
+          },
+          {
+            "$$hashKey": "object:1080",
+            "selected": false,
+            "text": "Netherlands",
+            "value": "Netherlands"
+          },
+          {
+            "$$hashKey": "object:1081",
+            "selected": false,
+            "text": "New Zealand",
+            "value": "New Zealand"
+          },
+          {
+            "$$hashKey": "object:1082",
+            "selected": false,
+            "text": "Nicaragua",
+            "value": "Nicaragua"
+          },
+          {
+            "$$hashKey": "object:1083",
+            "selected": false,
+            "text": "Niger",
+            "value": "Niger"
+          },
+          {
+            "$$hashKey": "object:1084",
+            "selected": false,
+            "text": "Nigeria",
+            "value": "Nigeria"
+          },
+          {
+            "$$hashKey": "object:1085",
+            "selected": false,
+            "text": "North Macedonia",
+            "value": "North Macedonia"
+          },
+          {
+            "$$hashKey": "object:1086",
+            "selected": false,
+            "text": "Norway",
+            "value": "Norway"
+          },
+          {
+            "$$hashKey": "object:1087",
+            "selected": false,
+            "text": "Oman",
+            "value": "Oman"
+          },
+          {
+            "$$hashKey": "object:1088",
+            "selected": false,
+            "text": "Pakistan",
+            "value": "Pakistan"
+          },
+          {
+            "$$hashKey": "object:1089",
+            "selected": false,
+            "text": "Panama",
+            "value": "Panama"
+          },
+          {
+            "$$hashKey": "object:1090",
+            "selected": false,
+            "text": "Papua New Guinea",
+            "value": "Papua New Guinea"
+          },
+          {
+            "$$hashKey": "object:1091",
+            "selected": false,
+            "text": "Paraguay",
+            "value": "Paraguay"
+          },
+          {
+            "$$hashKey": "object:1092",
+            "selected": false,
+            "text": "Peru",
+            "value": "Peru"
+          },
+          {
+            "$$hashKey": "object:1093",
+            "selected": false,
+            "text": "Philippines",
+            "value": "Philippines"
+          },
+          {
+            "$$hashKey": "object:1094",
+            "selected": false,
+            "text": "Poland",
+            "value": "Poland"
+          },
+          {
+            "$$hashKey": "object:1095",
+            "selected": false,
+            "text": "Portugal",
+            "value": "Portugal"
+          },
+          {
+            "$$hashKey": "object:1096",
+            "selected": false,
+            "text": "Qatar",
+            "value": "Qatar"
+          },
+          {
+            "$$hashKey": "object:1097",
+            "selected": false,
+            "text": "Romania",
+            "value": "Romania"
+          },
+          {
+            "$$hashKey": "object:1098",
+            "selected": false,
+            "text": "Russia",
+            "value": "Russia"
+          },
+          {
+            "$$hashKey": "object:1099",
+            "selected": false,
+            "text": "Rwanda",
+            "value": "Rwanda"
+          },
+          {
+            "$$hashKey": "object:1100",
+            "selected": false,
+            "text": "Saint Kitts and Nevis",
+            "value": "Saint Kitts and Nevis"
+          },
+          {
+            "$$hashKey": "object:1101",
+            "selected": false,
+            "text": "Saint Lucia",
+            "value": "Saint Lucia"
+          },
+          {
+            "$$hashKey": "object:1102",
+            "selected": false,
+            "text": "Saint Vincent and the Grenadines",
+            "value": "Saint Vincent and the Grenadines"
+          },
+          {
+            "$$hashKey": "object:1103",
+            "selected": false,
+            "text": "San Marino",
+            "value": "San Marino"
+          },
+          {
+            "$$hashKey": "object:1104",
+            "selected": false,
+            "text": "Saudi Arabia",
+            "value": "Saudi Arabia"
+          },
+          {
+            "$$hashKey": "object:1105",
+            "selected": false,
+            "text": "Senegal",
+            "value": "Senegal"
+          },
+          {
+            "$$hashKey": "object:1106",
+            "selected": false,
+            "text": "Serbia",
+            "value": "Serbia"
+          },
+          {
+            "$$hashKey": "object:1107",
+            "selected": false,
+            "text": "Seychelles",
+            "value": "Seychelles"
+          },
+          {
+            "$$hashKey": "object:1108",
+            "selected": false,
+            "text": "Singapore",
+            "value": "Singapore"
+          },
+          {
+            "$$hashKey": "object:1109",
+            "selected": false,
+            "text": "Slovakia",
+            "value": "Slovakia"
+          },
+          {
+            "$$hashKey": "object:1110",
+            "selected": false,
+            "text": "Slovenia",
+            "value": "Slovenia"
+          },
+          {
+            "$$hashKey": "object:1111",
+            "selected": false,
+            "text": "Somalia",
+            "value": "Somalia"
+          },
+          {
+            "$$hashKey": "object:1112",
+            "selected": false,
+            "text": "South Africa",
+            "value": "South Africa"
+          },
+          {
+            "$$hashKey": "object:1113",
+            "selected": false,
+            "text": "Spain",
+            "value": "Spain"
+          },
+          {
+            "$$hashKey": "object:1114",
+            "selected": false,
+            "text": "Sri Lanka",
+            "value": "Sri Lanka"
+          },
+          {
+            "$$hashKey": "object:1115",
+            "selected": false,
+            "text": "Sudan",
+            "value": "Sudan"
+          },
+          {
+            "$$hashKey": "object:1116",
+            "selected": false,
+            "text": "Suriname",
+            "value": "Suriname"
+          },
+          {
+            "$$hashKey": "object:1117",
+            "selected": false,
+            "text": "Sweden",
+            "value": "Sweden"
+          },
+          {
+            "$$hashKey": "object:1118",
+            "selected": false,
+            "text": "Switzerland",
+            "value": "Switzerland"
+          },
+          {
+            "$$hashKey": "object:1119",
+            "selected": false,
+            "text": "Syria",
+            "value": "Syria"
+          },
+          {
+            "$$hashKey": "object:1120",
+            "selected": false,
+            "text": "Taiwan*",
+            "value": "Taiwan*"
+          },
+          {
+            "$$hashKey": "object:1121",
+            "selected": false,
+            "text": "Tanzania",
+            "value": "Tanzania"
+          },
+          {
+            "$$hashKey": "object:1122",
+            "selected": false,
+            "text": "Thailand",
+            "value": "Thailand"
+          },
+          {
+            "$$hashKey": "object:1123",
+            "selected": false,
+            "text": "The West Bank and Gaza",
+            "value": "The West Bank and Gaza"
+          },
+          {
+            "$$hashKey": "object:1124",
+            "selected": false,
+            "text": "Timor-Leste",
+            "value": "Timor-Leste"
+          },
+          {
+            "$$hashKey": "object:1125",
+            "selected": false,
+            "text": "Togo",
+            "value": "Togo"
+          },
+          {
+            "$$hashKey": "object:1126",
+            "selected": false,
+            "text": "Trinidad and Tobago",
+            "value": "Trinidad and Tobago"
+          },
+          {
+            "$$hashKey": "object:1127",
+            "selected": false,
+            "text": "Tunisia",
+            "value": "Tunisia"
+          },
+          {
+            "$$hashKey": "object:1128",
+            "selected": false,
+            "text": "Turkey",
+            "value": "Turkey"
+          },
+          {
+            "$$hashKey": "object:1129",
+            "selected": false,
+            "text": "US",
+            "value": "US"
+          },
+          {
+            "$$hashKey": "object:1130",
+            "selected": false,
+            "text": "Uganda",
+            "value": "Uganda"
+          },
+          {
+            "$$hashKey": "object:1131",
+            "selected": false,
+            "text": "Ukraine",
+            "value": "Ukraine"
+          },
+          {
+            "$$hashKey": "object:1132",
+            "selected": false,
+            "text": "United Arab Emirates",
+            "value": "United Arab Emirates"
+          },
+          {
+            "$$hashKey": "object:1133",
+            "selected": false,
+            "text": "United Kingdom",
+            "value": "United Kingdom"
+          },
+          {
+            "$$hashKey": "object:1134",
+            "selected": false,
+            "text": "Uruguay",
+            "value": "Uruguay"
+          },
+          {
+            "$$hashKey": "object:1135",
+            "selected": false,
+            "text": "Uzbekistan",
+            "value": "Uzbekistan"
+          },
+          {
+            "$$hashKey": "object:1136",
+            "selected": false,
+            "text": "Venezuela",
+            "value": "Venezuela"
+          },
+          {
+            "$$hashKey": "object:1137",
+            "selected": false,
+            "text": "Vietnam",
+            "value": "Vietnam"
+          },
+          {
+            "$$hashKey": "object:1138",
+            "selected": false,
+            "text": "Zambia",
+            "value": "Zambia"
+          },
+          {
+            "$$hashKey": "object:1139",
+            "selected": false,
+            "text": "Zimbabwe",
+            "value": "Zimbabwe"
+          }
+        ],
+        "query": "SELECT name FROM country",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "2020-01-18T07:21:00.624Z",
+    "to": "2020-04-14T20:16:35.477Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Details",
+  "uid": "TDnBtPuWz",
+  "variables": {
+    "list": []
+  },
+  "version": 13
+}
