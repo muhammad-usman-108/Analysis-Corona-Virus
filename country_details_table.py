@@ -5,15 +5,11 @@ Created on Thu Mar 26 12:11:27 2020
 @author: MUHAMMADUsman
 """
 
-
-
-
-
 import psycopg2
 from psycopg2 import Error
 
 try:
-    connection = psycopg2.connect(database="mytestdb", user="postgres", password="trustno1", host="127.0.0.1", port="5432")
+    connection = psycopg2.connect(database="corona", user="postgres", password="admin", host="127.0.0.1", port="5432")
 
     cursor = connection.cursor()
     
