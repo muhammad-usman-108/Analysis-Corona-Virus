@@ -2,6 +2,8 @@
 import requests 
 import psycopg2
 from psycopg2 import Error
+import json
+
 # api-endpoint 
 URL = "https://pomber.github.io/covid19/timeseries.json"
 
@@ -12,7 +14,6 @@ r = requests.get(url = URL)
 data = r.json() 
 # https://ourworldindata.org/coronavirus-testing-source-data
 country_info = {}
-#print(data.keys())
 
 sum = 0
 
@@ -20,12 +21,7 @@ for country in sorted(data.keys()):
 	country_info[country] = data[country][len(data[country])-1]["confirmed"]
 
 
- 
-#print(country_info)
-
-
-import json
-
+# open the countries json file to read the country info and map the corona cases accordingly
 with open('countries.json') as f:
   data = json.load(f)
 
@@ -39,7 +35,7 @@ for index in range(0,len(data["data"])):
 
 
 try:
-   connection = psycopg2.connect(database="mytestdb", user="postgres", password="trustno1", host="127.0.0.1", port="5432")
+   connection = psycopg2.connect(database="corona", user="postgres", password="admin", host="127.0.0.1", port="5432")
    cursor = connection.cursor()
 
    postgres_insert_query = """ INSERT INTO country (ID, NAME, TOTAL_CASES, LATITUDE, LONGITUDE) VALUES (%s,%s,%s,%s,%s)"""
